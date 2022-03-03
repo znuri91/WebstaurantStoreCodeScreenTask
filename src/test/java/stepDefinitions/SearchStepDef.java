@@ -13,6 +13,7 @@ import utilities.SeleniumUtils;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 public class SearchStepDef {
 
@@ -43,12 +44,9 @@ public class SearchStepDef {
         //for more similar steps we just need to click on each page
 
         for (WebElement product: searchPage.searchResultList) {
-            listOfProducts.add(product.getText());
+            Assert.assertTrue(product.getText().toLowerCase().contains(keyWord));
         }
    //  System.out.println(listOfProducts);
-
-
-       Assert.assertTrue(listOfProducts.contains(keyWord));
 
     }
 
