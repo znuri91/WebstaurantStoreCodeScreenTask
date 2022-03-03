@@ -41,15 +41,14 @@ public class SearchStepDef {
     public void all_products_on_the_search_list_should_have_the_word_in_its_title(String keyWord) {
          //only 1st search page implementation
         //for more similar steps we just need to click on each page
-     //   List<String>listOfProducts = new LinkedList<>();
 
-//        for (WebElement product: searchPage.searchResultList) {
-//            listOfProducts.add(product.getText());
-//        }
-     System.out.println(listOfProducts);
+        for (WebElement product: searchPage.searchResultList) {
+            listOfProducts.add(product.getText());
+        }
+   //  System.out.println(listOfProducts);
 
 
-   //     Assert.assertTrue(listOfProducts.contains(keyWord));
+       Assert.assertTrue(listOfProducts.contains(keyWord));
 
     }
 
